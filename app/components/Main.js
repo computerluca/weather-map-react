@@ -1,6 +1,5 @@
 var React = require('react');
 var Search = require('../components/Search');
-var ReactRouter = require('react-router');
 var Main = React.createClass({
    contextTypes :{
         router: React.PropTypes.object.isRequired

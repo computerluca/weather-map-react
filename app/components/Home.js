@@ -1,6 +1,5 @@
 var React = require('react');
 var Search = require('../components/Search');
-var ReactRouter = require('react-router');
 var Home = React.createClass({
     childContextTypes: {
     router: React.PropTypes.func.isRequired

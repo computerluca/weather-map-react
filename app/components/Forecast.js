@@ -1,48 +1,41 @@
 var React = require('react');
 var PropTypes =React.PropTypes;
-function DayForecast(props){
-    
-}
+var DayForecast = require('./DayForecast');
 function Forecast(props){
-    
-        
-        if(props.loading){
+    console.log(props);
+   if(props.loading){
         return(<div className="container"><div className="jumbotron"><h2>Loading....</h2></div></div>);
     }
     else{
-        console.log(props.forecast);
+
        return (<div className="container">
                 <div className="jumbotron">
-                        <div>Forecast for the city of {props.city}</div>
+                        <h2>Forecast for the city of {props.city}</h2>
+                        
                 </div>
                 <div className="row">
+
                             <div className="col col-sm-4">
-                                <h1>First column</h1>
+                                <DayForecast forecast={props.forecast[0]} manageClick={props.manageClick}/>
                             </div>
-                             <div className="col col-sm-4">
-                                <h1>Second column</h1>
+                            <div className="col col-sm-4">
+                                <DayForecast forecast={props.forecast[1]} manageClick={props.manageClick}/>
                             </div>
-                             <div className="col col-sm-4">
-                                <h1>Third column</h1>
+                            <div className="col col-sm-4">
+                                <DayForecast forecast={props.forecast[2]} manageClick={props.manageClick}/>
+                            </div>
+                            </div>
+                        
+                            <div className="row">
+                            <div className="col col-sm-4">
+                                <DayForecast forecast={props.forecast[3]} manageClick={props.manageClick}/>
+                            </div>
+                            <div className="col col-sm-4">
+                                <DayForecast forecast={props.forecast[4]} manageClick={props.manageClick}/>
+                            </div>
                             </div>
                 
-                </div>
-                <div className="row">
-                            <div className="col col-sm-6"><h1>Second column</h1></div>
-                            <div className="col col-sm-6"><h1>Second column</h1></div>
-                
-                </div>
-            </div>)
-        
+                </div>)
     }
-    
-        
-        
-        
-        
-};
-Forecast.propTypes={
-        city:PropTypes.string.isRequired,
-        
-    };
+}
 module.exports = Forecast;
